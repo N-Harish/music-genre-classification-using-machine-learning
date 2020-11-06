@@ -3,8 +3,13 @@ librosa==0.8.0
 scipy~=1.5.4
 numpy~=1.19.2
 matplotlib==3.3.2
+<<<<<<< HEAD
 Pillow~=8.0.1
 scikit_learn==0.23.2
 scikit-learn~=0.23.2
 streamlit~=0.70.0
 pydub~=0.24.1
+=======
+streamlit==0.69.2
+scikit-learn==0.23.2
+>>>>>>> 91333f435675a6c151b4fb52902a64255b678ff6
