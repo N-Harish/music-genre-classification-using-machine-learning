@@ -4,7 +4,6 @@ scipy~=1.5.4
 numpy~=1.19.2
 matplotlib==3.3.2
 Pillow~=8.0.1
-scikit_learn==0.23.2
 scikit-learn~=0.23.2
 streamlit~=0.70.0
 pydub~=0.24.1
