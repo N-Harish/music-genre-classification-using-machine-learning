@@ -52,7 +52,7 @@ if radio == 'wav':
 
         elif rad == "Spectrogram":
             fig = spectrogram_plot(file)
-            # st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
             st.markdown(
                 f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
                 unsafe_allow_html=True)
