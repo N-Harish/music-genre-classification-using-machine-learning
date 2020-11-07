@@ -19,9 +19,9 @@ st.markdown(
     """<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>AUDIO CLASSIFIER</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Using Machine Learning</h1>""",
     unsafe_allow_html=True)
 
-# radio = st.sidebar.radio("Select format of audio file", options=['mp3', 'wav'])
+radio = st.sidebar.radio("Select format of audio file", options=['mp3', 'wav'])
 
-radio = st.sidebar.radio("Select format of audio file", options=['wav'])
+#radio = st.sidebar.radio("Select format of audio file", options=['wav'])
 
 if radio == 'wav':
 
