@@ -70,29 +70,29 @@ elif radio == 'mp3':
          subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
 #        sound = AudioSegment.from_mp3(file)
 #        sound.export("file.wav", format="wav")
-#        st.markdown(
-#            """<h1 style='color:yellow;'>Audio : </h1>""",
-#            unsafe_allow_html=True)
-#        a = st.audio(file, format="audio/mp3")
+        st.markdown(
+            """<h1 style='color:yellow;'>Audio : </h1>""",
+            unsafe_allow_html=True)
+        a = st.audio(file, format="audio/mp3")
 
-#        rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
-
+        #rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
+        rad = st.sidebar.radio("Choose Options", options=["Predict"])
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
-#        if rad == "Predict":
-#            if st.button("Classify Audio"):
-#                uploaded_audio = audio_process("file.wav")
+        if rad == "Predict":
+            if st.button("Classify Audio"):
+                uploaded_audio = audio_process("file.wav")
 
-#                predictions = model.predict(uploaded_audio)
+                predictions = model.predict(uploaded_audio)
 
-#                targets = encoding.inverse_transform(np.array(predictions).reshape(1, -1))
+                targets = encoding.inverse_transform(np.array(predictions).reshape(1, -1))
                 #
                 # st.write(targets[0][0])
                 #
                 # st.success(targets[0][0])
 
-#                st.markdown(
-#                    f"""<h1 style='color:yellow;'>Prediction : <span style='color:white;'>{targets[0][0]}</span></h1>""",
-#                    unsafe_allow_html=True)
+                st.markdown(
+                    f"""<h1 style='color:yellow;'>Prediction : <span style='color:white;'>{targets[0][0]}</span></h1>""",
+                    unsafe_allow_html=True)
 
 #        elif rad == "Spectrogram":
 #            fig = spectrogram_plot("file.wav")
