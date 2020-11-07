@@ -67,7 +67,8 @@ elif radio == 'mp3':
     file = st.sidebar.file_uploader("Upload Audio To Classify", type="mp3")
 #    
     if file is not None:
-         subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
+         #subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
+         subprocess.call(f'ffmpeg -i {file} -acodec pcm_u8 -ar 22050 file.wav', shell=True)
 #        sound = AudioSegment.from_mp3(file)
 #        sound.export("file.wav", format="wav")
          st.markdown(
