@@ -2,4 +2,4 @@ libsndfile1
 libsndfile1-dev
 libav-tools libavcodec-extra
 ffmpeg
-mpg123
+mpg321
