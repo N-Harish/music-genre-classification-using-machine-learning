@@ -62,46 +62,46 @@ if radio == 'wav':
 
 
 
-# elif radio == 'mp3':
-#    file = st.sidebar.file_uploader("Upload Audio To Classify", type="mp3")
+ elif radio == 'mp3':
+    file = st.sidebar.file_uploader("Upload Audio To Classify", type="mp3")
 
-#    if file is not None:
+    if file is not None:
         # sound = AudioSegment.from_mp3(file)
         # sound.export("file.wav", format="wav")
-#        st.markdown(
-#            """<h1 style='color:yellow;'>Audio : </h1>""",
-#            unsafe_allow_html=True)
-#        a = st.audio(file, format="audio/mp3")
+        st.markdown(
+            """<h1 style='color:yellow;'>Audio : </h1>""",
+            unsafe_allow_html=True)
+        a = st.audio(file, format="audio/mp3")
         
-#        sound = AudioSegment.from_mp3(file)
-#        sound.export("file.wav", format="wav")
+        sound = AudioSegment.from_mp3(file)
+        sound.export("file.wav", format="wav")
         
-#        rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
+        rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
 
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
-#        if rad == "Predict":
-#            if st.button("Classify Audio"):
-#                uploaded_audio = audio_process("file.wav")
+        if rad == "Predict":
+            if st.button("Classify Audio"):
+                uploaded_audio = audio_process("file.wav")
 
-#                predictions = model.predict(uploaded_audio)
+                predictions = model.predict(uploaded_audio)
 
-#                targets = encoding.inverse_transform(np.array(predictions).reshape(1, -1))
+                targets = encoding.inverse_transform(np.array(predictions).reshape(1, -1))
                 #
                 # st.write(targets[0][0])
                 #
                 # st.success(targets[0][0])
 
-#                st.markdown(
-#                    f"""<h1 style='color:yellow;'>Prediction : <span style='color:white;'>{targets[0][0]}</span></h1>""",
-#                    unsafe_allow_html=True)
+                st.markdown(
+                    f"""<h1 style='color:yellow;'>Prediction : <span style='color:white;'>{targets[0][0]}</span></h1>""",
+                    unsafe_allow_html=True)
 
-#        elif rad == "Spectrogram":
-#            fig = spectrogram_plot("file.wav")
-#            st.set_option('deprecation.showPyplotGlobalUse', False)
-#            st.markdown(
-#                f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
-#                unsafe_allow_html=True)
-#            st.pyplot(fig)
+        elif rad == "Spectrogram":
+            fig = spectrogram_plot("file.wav")
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.markdown(
+                f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
+                unsafe_allow_html=True)
+            st.pyplot(fig)
 
         # sound = AudioSegment.from_mp3(file)
         # st.write("Please Upload in wav form")
@@ -110,4 +110,4 @@ if radio == 'wav':
         #     unsafe_allow_html=True)
         # st.audio(file)
 
-#        os.remove("file.wav")
+        os.remove("file.wav")
