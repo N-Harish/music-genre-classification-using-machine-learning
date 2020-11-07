@@ -82,7 +82,7 @@ elif radio == 'mp3':
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
          if rad == "Predict":
              if st.button("Classify Audio"):
-                uploaded_audio = audio_process("file.wav")
+                uploaded_audio = audio_process("/app/file.wav")
 
                 predictions = model.predict(uploaded_audio)
 
