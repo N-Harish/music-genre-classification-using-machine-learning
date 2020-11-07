@@ -1,8 +1,4 @@
 libsndfile1
 libsndfile1-dev
 libav-tools
-ffmpeg libav-tools x264 x265
-ffmpeg-doc i965-va-driver-shaders libasound2-plugins alsa-utils
-libbluray-bdj firmware-crystalhd jackd2 libportaudio2 opus-tools pciutils
-pulseaudio libraw1394-doc lm-sensors sndiod speex libvdpau-va-gl1
-nvidia-vdpau-driver nvidia-legacy-340xx-vdpau-driver
+ffmpeg
