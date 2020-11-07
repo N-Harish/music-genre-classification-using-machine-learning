@@ -70,16 +70,16 @@ elif radio == 'mp3':
          subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
 #        sound = AudioSegment.from_mp3(file)
 #        sound.export("file.wav", format="wav")
-        st.markdown(
+         st.markdown(
             """<h1 style='color:yellow;'>Audio : </h1>""",
             unsafe_allow_html=True)
-        a = st.audio(file, format="audio/mp3")
+         a = st.audio(file, format="audio/mp3")
 
         #rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
-        rad = st.sidebar.radio("Choose Options", options=["Predict"])
+         rad = st.sidebar.radio("Choose Options", options=["Predict"])
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
-        if rad == "Predict":
-            if st.button("Classify Audio"):
+         if rad == "Predict":
+             if st.button("Classify Audio"):
                 uploaded_audio = audio_process("file.wav")
 
                 predictions = model.predict(uploaded_audio)
