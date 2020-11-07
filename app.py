@@ -69,10 +69,7 @@ elif radio == 'mp3':
     if file is not None:
          #subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
          subprocess.call(f'ffmpeg -i {file} -acodec pcm_u8 -ar 22050 file.wav', shell=True)
-         d = '.'
-         li = [os.path.join(d, o) for o in os.listdir(d) 
-                    if os.path.isdir(os.path.join(d,o))]
-         st.write(li)
+         st.write(os.getcwd())
 #        sound = AudioSegment.from_mp3(file)
 #        sound.export("file.wav", format="wav")
          st.markdown(
