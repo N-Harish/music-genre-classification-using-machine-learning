@@ -4,6 +4,8 @@ from models.load_model import model_loader
 import numpy as np
 from pydub import AudioSegment
 import os
+import ffprobe
+
 
 model, encoding = model_loader("Saved_model.sav", "Encodings.sav")
 
