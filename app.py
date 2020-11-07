@@ -73,7 +73,7 @@ elif radio == 'mp3':
          test = subprocess.call('whereis ffmpeg',shell=True)
          subprocess1 = subprocess.Popen("whereis ffmpeg", shell=True, stdout=subprocess.PIPE)
          subprocess_return = subprocess1.stdout.read()
-         at.write(subprocess1)
+         st.write(subprocess_return)
          st.write(test)
 #        sound = AudioSegment.from_mp3(file)
 #        sound.export("file.wav", format="wav")
