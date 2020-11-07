@@ -64,13 +64,16 @@ elif radio == 'mp3':
     file = st.sidebar.file_uploader("Upload Audio To Classify", type="mp3")
 
     if file is not None:
-        sound = AudioSegment.from_mp3(file)
-        sound.export("file.wav", format="wav")
+        # sound = AudioSegment.from_mp3(file)
+        # sound.export("file.wav", format="wav")
         st.markdown(
             """<h1 style='color:yellow;'>Audio : </h1>""",
             unsafe_allow_html=True)
         a = st.audio(file, format="audio/mp3")
-
+        
+        sound = AudioSegment.from_mp3(file)
+        sound.export("file.wav", format="wav")
+        
         rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
 
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
