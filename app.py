@@ -4,8 +4,6 @@ from models.load_model import model_loader
 import numpy as np
 from pydub import AudioSegment
 import os
-import subprocess
-
 
 model, encoding = model_loader("Saved_model.sav", "Encodings.sav")
 
@@ -22,7 +20,6 @@ st.markdown(
     unsafe_allow_html=True)
 
 radio = st.sidebar.radio("Select format of audio file", options=['mp3', 'wav'])
-#radio = st.sidebar.radio("Select format of audio file", options=['wav'])
 
 if radio == 'wav':
 
@@ -65,28 +62,20 @@ if radio == 'wav':
 
 elif radio == 'mp3':
     file = st.sidebar.file_uploader("Upload Audio To Classify", type="mp3")
-#    
+
     if file is not None:
-         #subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
-         test = subprocess.Popen(f'ffmpeg -i {file} file.wav', shell=True, stdout=subprocess.PIPE)
-         #subprocess.call(f'mpg321 -w file.wav {file}',shell = True)
-         #test = subprocess.call('whereis ffmpeg',shell=True)
-         subprocess1 = subprocess.Popen("whereis ffmpeg", shell=True, stdout=subprocess.PIPE)
-         subprocess_return = test.stdout.read()
-         st.write(subprocess_return)
-         #AudioSegment.converter = '/app/.apt/usr/bin/ffmpeg'
-         sound = AudioSegment.from_mp3(file)
-         sound.export("file.wav", format="wav")
-         st.markdown(
+        sound = AudioSegment.from_mp3(file)
+        sound.export("file.wav", format="wav")
+        st.markdown(
             """<h1 style='color:yellow;'>Audio : </h1>""",
             unsafe_allow_html=True)
-         a = st.audio(file, format="audio/mp3")
+        a = st.audio(file, format="audio/mp3")
 
-        #rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
-         rad = st.sidebar.radio("Choose Options", options=["Predict"])
+        rad = st.sidebar.radio("Choose Options", options=["Predict", "Spectrogram"])
+
         # rad = st.sidebar.checkbox(label="Do You want to see the spectrogram ?")
-         if rad == "Predict":
-             if st.button("Classify Audio"):
+        if rad == "Predict":
+            if st.button("Classify Audio"):
                 uploaded_audio = audio_process("file.wav")
 
                 predictions = model.predict(uploaded_audio)
@@ -101,13 +90,13 @@ elif radio == 'mp3':
                     f"""<h1 style='color:yellow;'>Prediction : <span style='color:white;'>{targets[0][0]}</span></h1>""",
                     unsafe_allow_html=True)
 
-#        elif rad == "Spectrogram":
-#            fig = spectrogram_plot("file.wav")
-#            st.set_option('deprecation.showPyplotGlobalUse', False)
-#            st.markdown(
-#                f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
-#                unsafe_allow_html=True)
-#            st.pyplot(fig)
+        elif rad == "Spectrogram":
+            fig = spectrogram_plot("file.wav")
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.markdown(
+                f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
+                unsafe_allow_html=True)
+            st.pyplot(fig)
 
         # sound = AudioSegment.from_mp3(file)
         # st.write("Please Upload in wav form")
@@ -116,4 +105,4 @@ elif radio == 'mp3':
         #     unsafe_allow_html=True)
         # st.audio(file)
 
-#        os.remove("file.wav")
+        os.remove("file.wav")
