@@ -74,9 +74,9 @@ elif radio == 'mp3':
          subprocess1 = subprocess.Popen("whereis ffmpeg", shell=True, stdout=subprocess.PIPE)
          subprocess_return = subprocess1.stdout.read()
          st.write(subprocess_return)
-         st.write(test)
-#        sound = AudioSegment.from_mp3(file)
-#        sound.export("file.wav", format="wav")
+         AudioSegment.converter = '/app/.apt/usr/bin/ffmpeg'
+         sound = AudioSegment.from_mp3(file)
+         sound.export("file.wav", format="wav")
          st.markdown(
             """<h1 style='color:yellow;'>Audio : </h1>""",
             unsafe_allow_html=True)
