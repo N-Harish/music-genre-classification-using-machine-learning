@@ -13,7 +13,7 @@ st.sidebar.markdown(
 # st.sidebar.markdown("""<h1 style='text-align: center;color: black;' ><a style='text-align: center;color: black;'href="https://github.com/rohankokkula/TEATH" target="_blank">Github Source Code</a></h1>""", unsafe_allow_html=True)
 
 st.sidebar.markdown(
-    """<style>body {background-color: #2C3454; background-size: 100% 100%; background-image: url('https://i2.wp.com/highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png?ssl=1'); color:white;}</style><body></body>""",
+    """<style>body {background-color: #2C3454;background-image: url('https://i2.wp.com/highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png?ssl=1'); background-size: 100% 100%;  color:white;}</style><body></body>""",
     unsafe_allow_html=True)
 st.markdown(
     """<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>AUDIO CLASSIFIER</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Using Machine Learning</h1>""",
