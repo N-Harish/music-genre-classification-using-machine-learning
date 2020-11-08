@@ -68,11 +68,11 @@ elif radio == 'mp3':
 #    
     if file is not None:
          #subprocess.call(['ffmpeg', '-i', f'{file}', '-acodec', 'pcm_u8', '-ar', '22050', 'file.wav'])
-         #subprocess.call(f'ffmpeg -i {file} file.wav', shell=True)
-         subprocess.call(f'mpg321 -w file.wav {file}',shell = True)
-         test = subprocess.call('whereis ffmpeg',shell=True)
+         test = subprocess.Popen(f'ffmpeg -i {file} file.wav', shell=True, stdout=subprocess.PIPE)
+         #subprocess.call(f'mpg321 -w file.wav {file}',shell = True)
+         #test = subprocess.call('whereis ffmpeg',shell=True)
          subprocess1 = subprocess.Popen("whereis ffmpeg", shell=True, stdout=subprocess.PIPE)
-         subprocess_return = subprocess1.stdout.read()
+         subprocess_return = test.stdout.read()
          st.write(subprocess_return)
          #AudioSegment.converter = '/app/.apt/usr/bin/ffmpeg'
          sound = AudioSegment.from_mp3(file)
