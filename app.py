@@ -13,7 +13,7 @@ st.sidebar.markdown(
 # st.sidebar.markdown("""<h1 style='text-align: center;color: black;' ><a style='text-align: center;color: black;'href="https://github.com/rohankokkula/TEATH" target="_blank">Github Source Code</a></h1>""", unsafe_allow_html=True)
 
 st.sidebar.markdown(
-    """<style>body {background-color: #2C3454;background-image: url('https://i2.wp.com/highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png?ssl=1'); color:white;}</style><body></body>""",
+    """<style>body {background-color: #2C3454; background-image: url('https://i2.wp.com/highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png?ssl=1'); color:white;}</style><body></body>""",
     unsafe_allow_html=True)
 st.markdown(
     """<h1 style='text-align: center; color: white;font-size:60px;margin-top:-50px;'>AUDIO CLASSIFIER</h1><h1 style='text-align: center; color: white;font-size:30px;margin-top:-30px;'>Using Machine Learning</h1>""",
@@ -170,7 +170,6 @@ if check:
                     unsafe_allow_html=True)
                 st.pyplot(fig)
 
-<<<<<<< HEAD
     elif rad_test == "wav":
         rad_file = st.sidebar.radio("Select the name of song", ["Man Out Of Town", "Trumpet Tune"])
         if rad_file == "Man Out Of Town":
@@ -180,15 +179,6 @@ if check:
             if rad == "Predict":
                 if st.button("Classify Audio"):
                     uploaded_audio = audio_process("Man Out Of Town.wav")
-=======
-        elif rad == "Spectrogram":
-            fig = spectrogram_plot(file)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.markdown(
-                f"""<h1 style='color:yellow;'>Spectrogram : </h1>""",
-                unsafe_allow_html=True)
-            st.pyplot(fig)
->>>>>>> 1f53cea564f8cc4d368bf695cf0b836920d85c7b
 
                     predictions = model.predict(uploaded_audio)
 
@@ -325,17 +315,4 @@ else:
             #     unsafe_allow_html=True)
             # st.audio(file)
 
-<<<<<<< HEAD
             os.remove("file.wav")
-=======
-        os.remove("file.wav")
-
-        
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)        
->>>>>>> 1f53cea564f8cc4d368bf695cf0b836920d85c7b
