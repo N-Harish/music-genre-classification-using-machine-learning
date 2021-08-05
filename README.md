@@ -1,4 +1,4 @@
-# audio-ml
+# music genre classification
 
 ## Technologies used
 * Librosa for extracting audio features
