@@ -26,4 +26,4 @@
 
 
 ## link of the deployed app
-https://music-type-predictor.herokuapp.com
+[https://music-type-predictor.herokuapp.com](https://n-harish-audio-ml-app-kzuo8h.streamlit.app)
